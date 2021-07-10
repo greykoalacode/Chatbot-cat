@@ -1,0 +1,116 @@
+.modal {
+  // Styles for the Modal Overlay
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+
+  // Modal Header Styles
+  &-header {
+    padding: 1.5em 3em;
+    color: #fff;
+  }
+  // Modal Title
+  &-title {
+    margin: 0;
+    text-transform: uppercase;
+  }
+  // Modal Body
+  &-body {
+    padding: 1em;
+  }
+
+  // Styles for Modal Content
+  &-content {
+    width: 400px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 1em;
+
+    // For the Background setting divs modal-content-bg1 and .modal-content-bg2
+    &-bg1 {
+      background-color: #f97514;
+      border-radius: 1em 1em 0 0;
+      position: absolute;
+      height: 40%;
+      inset: 0;
+      z-index: -10;
+    }
+    &-bg2 {
+      background-color: white;
+      border-radius: 0 0 1em 1em;
+      position: absolute;
+      height: 60%;
+      inset: 0;
+      top: 40%;
+      z-index: -10;
+    }
+  }
+  
+
+  // Close Button styles
+  &-close-button {
+    border: 0;
+    background-color: transparent;
+    position: absolute;
+    right: 32px;
+    top: 5px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+  }
+  &-close-button:hover {
+    opacity: 1;
+  }
+  &-close-button:before,
+  &-close-button:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 2px;
+    background-color: #333;
+  }
+  &-close-button:before {
+    transform: rotate(45deg);
+  }
+  &-close-button:after {
+    transform: rotate(-45deg);
+  }
+}
+
+// Styles for on Modal to show, and its content. 
+.modal.show {
+  opacity: 1;
+  pointer-events: visible;
+}
+.modal.show .modal-content {
+  transform: translateY(0);
+}
+
+
+// Media query for small screen (< 426px)
+@media only screen and (max-width: 426px) {
+  .modal {
+    &-content {
+      width: 80vw;
+    }
+
+    &-header {
+      padding: 1em 1.5em;
+      h3,
+      p {
+        font-size: 1em;
+        margin: 0.35em 0;
+      }
+    }
+  }
+}

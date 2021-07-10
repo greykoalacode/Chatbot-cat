@@ -1,0 +1,76 @@
+.FAQ {
+  // Styles for FAQ Card Title
+  &-Title {
+    display: flex;
+    margin: 0.5em;
+    align-items: center;
+  }
+  // Styles for FAQ Card container
+  &-Container {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #cccccc;
+  }
+  // Styles for FAQ Card Question Mark Icon
+  &-qtnMark {
+    margin-left: 0.5em;
+  }
+  // Styles for FAQ Card Footer Button
+  &-btn {
+    margin-top: 2em;
+    border: 0;
+    align-self: center;
+    background-color: #fff;
+    border-radius: 1.5em;
+    padding: 0.75em 1em;
+    font-size: 0.85em;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border: 1px solid #cccccc;
+    box-shadow: 0px 3px 20px -2px #cccccc;
+    -webkit-box-shadow: 0px 3px 20px -2px #cccccc;
+    -moz-box-shadow: 0px 3px 20px -2px #cccccc;
+    &-img {
+      margin-right: 0.35em;
+    }
+  }
+  // Styles For the Bot icon at top of FAQ Card
+  &-top {
+    &-icon {
+      background-color: #f97514;
+      border-radius: 50%;
+      padding: 0.6em;
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      box-shadow: 0px 1px 5px 1px #696969;
+      -webkit-box-shadow: 0px 1px 5px 1px #696969;
+      -moz-box-shadow: 0px 1px 5px 1px #696969;
+    }
+    &-container {
+      display: inline-block;
+      position: relative;
+    }
+  }
+}
+// Media Query for small screen (< 426px)
+@media only screen and (max-width: 426px) {
+  .FAQ {
+    &-top {
+      &-icon {
+        padding: 0.3em;
+        height: 28px;
+        width: 28px;
+      }
+    }
+    &-btn {
+      margin-top: 1em;
+    }
+  }
+}
